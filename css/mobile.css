@@ -1,0 +1,64 @@
+
+#what .items{
+    display: block;
+}
+
+/*Align icon to left*/
+#what .items .item {
+    display: flex;
+    text-align: left;
+ 
+}
+/*Position icon*/
+#what .items .item i {
+    margin-right: 1.3rem;
+    align-self: center; /*Alinea el icono del dibujo en el centro*/
+    margin-bottom: 0;
+}
+/*Smartphones*/
+@media(max-width: 500px){
+    #navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+    #navbar .logo{
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    #navbar ul {
+        padding: 0.5rem;
+    }
+   #showcase .showcase-content{
+       top: 142px;
+       margin-top: -2rem;
+   } 
+   #who{
+       display: block; /*Resetea el flex. No aparece la imagen porque ocupa una altura y quitamos flexbox*/
+   }
+   #who .who-img{
+   display: none;
+   }
+   #menu .items{
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+    #menu .item{
+        padding: 0.75rem 0;
+    }
+    #contact{
+        flex-direction: column; /*No se puede ver el mapa porque ya no esta adjuntado al formulario horizontalmente*/
+    }                           /*Y se ocupa ponerle un height para que aparesca*/
+    #contact .map{
+        height: 200px;
+        border-top: solid 4px #333;
+    }
+}
+@media (max-height: 568px){
+    .l-heading{
+        font-size: 3rem;
+    }
+    .lead{
+        font-size: 1rem;
+    }
+}
