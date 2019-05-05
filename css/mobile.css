@@ -29,7 +29,7 @@
         padding: 0.5rem;
     }
    #showcase .showcase-content{
-       top: 110px;
+       top: 135px;
    } 
    #who{
        display: block; /*Resetea el flex. No aparece la imagen porque ocupa una altura y quitamos flexbox*/
