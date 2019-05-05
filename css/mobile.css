@@ -29,6 +29,7 @@
         padding: 0.5rem;
     }
    #showcase .showcase-content{
+       top: 140px;
        height: 100%;
    } 
    #who{
