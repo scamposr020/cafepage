@@ -131,7 +131,7 @@ p{
     padding: 0 2rem;
     /*Overlay*/
     position: absolute; /*Se usa "absolute" para que podamos cubrir todo el contenido del showcase*/
-    top: 64.5px;
+    top:0;
     left: 0;
     right: 0;
     bottom: 0;

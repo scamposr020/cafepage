@@ -28,10 +28,6 @@
     #navbar ul {
         padding: 0.5rem;
     }
-   #showcase .showcase-content{
-       top: 140px;
-       height: 100%;
-   } 
    #who{
        display: block; /*Resetea el flex. No aparece la imagen porque ocupa una altura y quitamos flexbox*/
    }
