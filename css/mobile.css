@@ -5,15 +5,14 @@
 
 /*Align icon to left*/
 #what .items .item {
-    display: flex;
-    text-align: left;
- 
+    display: block;
+    text-align: center;
 }
 /*Position icon*/
 #what .items .item i {
     margin-right: 1.3rem;
     align-self: center; /*Alinea el icono del dibujo en el centro*/
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 }
 /*Smartphones*/
 @media(max-width: 500px){
@@ -28,10 +27,6 @@
     #navbar ul {
         padding: 0.5rem;
     }
-   #showcase .showcase-content{
-       
-    align-self: flex-end;
-   } 
    #who{
        display: block; /*Resetea el flex. No aparece la imagen porque ocupa una altura y quitamos flexbox*/
    }

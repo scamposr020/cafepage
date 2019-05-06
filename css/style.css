@@ -40,10 +40,17 @@ p{
  background: #333;
  color: #f4f4f4;
 }
+.l-heading ,.lead{
+    animation-name: head_appear;
+    animation-timing-function: ease-in;
+ 
+    animation-fill-mode: forwards;
+}
 .l-heading{
     font-size: 4rem;
     margin-bottom: 0.75rem;
-    line-height: 1.1;
+    line-height: 1.1; 
+    animation-duration: 2s;
 }
 .m-heading{
     font-size: 2rem;
@@ -53,6 +60,9 @@ p{
 .lead{
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    opacity: 0;
+    animation-delay: 2s;
+    animation-duration: 2s;
 }
 .py-1{padding: 1.5rem 0;}
 .py-2{padding: 2rem 0;}
@@ -130,8 +140,7 @@ p{
     justify-content: center;
     align-items: center;
     padding-top: 6rem;
-  
-    /*Overlay*/
+    /*Overlay*/ /*QUITE (Absolute, top, right, left, bottom, lo hice fix para que haya compatibilidad*/ 
     background-color: rgba(0,0,0,0.4); /*El cuarto elemento es la transparencia*/ 
 }
 
@@ -193,4 +202,12 @@ p{
 #contact .contact-form input, #contact .contact-form textarea{
     width: 100%;
     padding: 0.5rem;
+}
+@keyframes head_appear{
+    from{
+       opacity: 0;
+    }
+    to{
+       opacity: 1;
+    }
 }
