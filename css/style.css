@@ -92,9 +92,10 @@ p{
 /*Navbar*/
 #navbar{
     display: flex;
-    justify-content: space-between; /*horizontal*/
-    position: sticky;
-    top: 0; /*SE PONE ESTO PARA QUE SE QUEDE "STICKY" EN LA PARTE DE ARRIBA*/
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+   /*SE PONE ESTO PARA QUE SE QUEDE "STICKY" EN LA PARTE DE ARRIBA*/
     background: #000;
     color: #f4f4f4;
     z-index: 1;
