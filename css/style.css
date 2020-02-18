@@ -1,78 +1,111 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-*{
-    box-sizing: border-box; /*Resseting everything*/
+* {
+    box-sizing: border-box;
+    /*Resseting everything*/
     margin: 0;
     padding: 0;
 }
+
 :root {
-    --principal: #fa9960; /*Es emjor usar SASS para crear variables por la compatibilidad en exploradores*/
-    
+    --principal: #fa9960;
+    /*Es emjor usar SASS para  jjjj crear variables por la compatibilidad en exploradores*/
 }
- body{
+
+body {
     font-family: 'Nunito Sans', sans-serif;
     line-height: 1.4;
 }
-a{
+
+a {
     text-decoration: none;
 }
-p{
-    margin: 0.75rem 0; /*Top and bottom/ Left and right*/ 
+
+p {
+    margin: 0.75rem 0;
+    /*Top and bottom/ Left and right*/
 }
+
+
 /*Utility Classes*/
-.container{
+
+.container {
     overflow: hidden;
     margin: auto;
     max-width: 1100px;
     padding: 0 2rem;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
-.text-primary{
-   
+
+.text-primary {
     color: #fa9960;
 }
-.bg-light{
- background: #f4f4f4;
- color: #333;
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
 }
-.bg-dark{
- background: #333;
- color: #f4f4f4;
+
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
 }
-.l-heading ,.lead{
+
+.l-heading,
+.lead {
     animation-name: head_appear;
     animation-timing-function: ease-in;
- 
     animation-fill-mode: forwards;
 }
-.l-heading{
+
+.l-heading {
     font-size: 4rem;
     margin-bottom: 0.75rem;
-    line-height: 1.1; 
+    line-height: 1.1;
     animation-duration: 2s;
 }
-.m-heading{
+
+.m-heading {
     font-size: 2rem;
     margin-bottom: 0.75rem;
     line-height: 1.1;
 }
-.lead{
+
+.lead {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     opacity: 0;
     animation-delay: 2s;
     animation-duration: 2s;
 }
-.py-1{padding: 1.5rem 0;}
-.py-2{padding: 2rem 0;}
-.py-3{padding: 3rem 0;}
 
-.p-1{padding: 1.5rem;}
-.p-2{padding: 2rem;}
-.p-3{padding: 3rem;}
+.py-1 {
+    padding: 1.5rem 0;
+}
 
-.btn{
+.py-2 {
+    padding: 2rem 0;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.p-1 {
+    padding: 1.5rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.btn {
     color: #f4f4f4;
     display: inline-block;
     background: #fa9960;
@@ -80,59 +113,75 @@ p{
     border: none;
     border-radius: 5px;
 }
-.btn:hover{
+
+.btn:hover {
     background: #fa9170;
 }
-.btn-dark{
+
+.btn-dark {
     background: #333;
     color: #fff;
 }
-.bg-primary{
+
+.bg-primary {
     background: #fa9960;
     color: #f4f4f4;
 }
-.list{
+
+.list {
     margin: 0.5rem 0;
     list-style: none;
 }
-.list li{
+
+.list li {
     padding: 0.5rem 0;
     border-bottom: dotted 1px #444;
 }
+
+
 /*Navbar*/
-#navbar{
+
+#navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
     position: fixed;
-   /*SE PONE ESTO PARA QUE SE QUEDE "STICKY" EN LA PARTE DE ARRIBA*/
+    /*SE PONE ESTO PARA QUE SE QUEDE "STICKY" EN LA PARTE DE ARRIBA*/
     background: #000;
     color: #f4f4f4;
     z-index: 1;
     padding: 1rem;
 }
-#navbar ul{
+
+#navbar ul {
     display: flex;
-    align-items: center; /*Vertical*/
+    align-items: center;
+    /*Vertical*/
     list-style: none;
 }
-#navbar ul li a{
+
+#navbar ul li a {
     color: #fff;
     padding: 0.75rem;
     margin: 0 0.25rem;
 }
-#navbar ul li a:hover{
-    background:  #fa9960;
+
+#navbar ul li a:hover {
+    background: #fa9960;
     border-radius: 5px;
 }
+
+
 /* Showcase */
-#showcase{
+
+#showcase {
     background: #333 url(../imagenes/cafe2.jpg) no-repeat center center/cover;
     height: 100vh;
     color: #f4f4f4;
     position: relative;
 }
-#showcase .showcase-content{
+
+#showcase .showcase-content {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -140,74 +189,107 @@ p{
     justify-content: center;
     align-items: center;
     padding-top: 6rem;
-    /*Overlay*/ /*QUITE (Absolute, top, right, left, bottom, lo hice fix para que haya compatibilidad*/ 
-    background-color: rgba(0,0,0,0.4); /*El cuarto elemento es la transparencia*/ 
+    /*Overlay*/
+    /*QUITE (Absolute, top, right, left, bottom, lo hice fix para que haya compatibilidad*/
+    background-color: rgba(0, 0, 0, 0.4);
+    /*El cuarto elemento es la transparencia*/
 }
 
+
 /* Section: What We Do*/
-#what .items{
+
+#what .items {
     display: flex;
     padding: 1rem;
 }
-#what .items .item{
+
+#what .items .item {
     flex: 1;
     text-align: center;
     padding: 1rem;
 }
-#what .item i{
-    background-color: #fa9170;
-    border-radius: 3rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
+
+#what .item img {
+    border-radius: 80%;
+    display: block;
+    /*Se utiliza display block para poder poner un width y mas
+                    que todo poder CENTRARLOS con margin*/
+    margin: auto;
+    width: 60%;
 }
+
+
 /*Section: Who We Are*/
 
-#who{
+#who {
     display: flex;
 }
-#who div{
+
+#who div {
     flex: 1;
 }
-#who .who-img{
+
+#who .who-img {
     background: url('../imagenes/1\ cafe.PNG') no-repeat center center/cover;
 }
-#who .schedules{
+
+#who .schedules {
     margin-top: 4rem;
 }
+
+
 /*Menu*/
-#menu .item img{
+
+#menu .item img {
     border-radius: 50%;
-    display: block; /*Se utiliza display block para poder poner un width y mas
+    display: block;
+    /*Se utiliza display block para poder poner un width y mas
                     que todo poder CENTRARLOS con margin*/
     margin: auto;
     width: 80%
 }
-#menu .items{
-    display:flex;
+
+#menu .items {
+    display: flex;
     align-content: center;
 }
 
+
 /*Section: Contact*/
-#contact{
-    display:flex;
-}   
-#contact .map, #contact .contact-form{
-    flex:1;
+
+#contact {
+    display: flex;
 }
-#contact .contact-form .form-group{
+
+#contact .map,
+#contact .contact-form {
+    flex: 1;
+}
+
+#contact .contact-form .form-group {
     margin: 0.75rem;
 }
-#contact .contact-form label {display: block;}
 
-#contact .contact-form input, #contact .contact-form textarea{
+#contact .contact-form label {
+    display: block;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
     width: 100%;
     padding: 0.5rem;
 }
-@keyframes head_appear{
-    from{
-       opacity: 0;
+
+.h3-1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+@keyframes head_appear {
+    from {
+        opacity: 0;
     }
-    to{
-       opacity: 1;
+    to {
+        opacity: 1;
     }
 }
