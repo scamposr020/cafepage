@@ -20,3 +20,9 @@ module.exports = function consulta(app) {
     });
 
 }
+
+module.exports = function addFormulary(app) {
+    sql.connect(dbConfig, function(err) {
+        var request = new sql.Request();
+    })
+}
