@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/StyleJoinOurTeam.css">
+    <!--Poner siempre el archivo principal de css arriba sino este archivo sobreescribe los otros archivos de css-->
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 1100px)" href="css/widescreen.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Café 97 | Coffee & Pastry</title>
+</head>
+
+<body id="home">
+    <!--Navbar-->
+    <nav id="navbar">
+        <!--Se pone el navbar afuera del header para que funcione como sticky-->
+        <!--Si se pone adentro entonces cuando llegue al final de la pagina va a desaparecer-->
+        <h1 class="logo">
+            <span class="text-primary">
+            <i class="fas fa-mug-hot"></i> Café</span> 97
+        </h1>
+        <ul>
+            <!--li{<a href="#"></a>}*4-->
+            <li><a href="#home">Home</a></li>
+            <li><a href="#what">What</a></li>
+            <li><a href="#who">Who</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!--HEADER-->
+
+
+    <header id="showcase">
+        <div class="showcase-content">
+            <div class="description">
+                <h1 class="l-heading">
+                    A Place Of Comfort
+                </h1>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima placeat quod, aut ex fugiat quam.</p>
+                <a href="#what" class="btn">Read More
+                </a>
+            </div>
+            <div class="firstPic"></div>
+            <div class="secondPic"></div>
+            <div class="Line"></div>
+        </div>
+    </header>
+
+    <!--Section: What We Do-->
+
+    <section id="who">
+        <div class="who-img"></div>
+        <div class="bg-dark p-2">
+            <h2 class="m-heading"><span class="text-primary">We</span> are Cafe 97</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis doloribus eveniet cupiditate iste, obcaecati, quam fuga vitae blanditiis quod in sint eos dolore assumenda sequi porro et nobis ipsum. Voluptatum nulla laudantium quidem
+                nobis possimus perferendis qui.</p>
+            <div class="schedules">
+                <h3>Our Schedule</h3>
+                <ul class="list">
+                    <li>Lorem ipsum mendalo 31, dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit, pouteli 28 amet consectetur.</li>
+                    <li>Lorem ipsum dolor sit amet, ferll 27.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="what" class="bg-light py-1">
+        <div class="container">
+            <h2 class="m-heading text-center"> <span class="text-primary">What</span> You Can Enjoy</h2>
+            <div class="items">
+
+                <div class="item">
+                    <div class="combo">
+                        <a href=""><img src="imagenes/wifi.jpg"></a>
+
+                        <div class="descrip-combo bg-primary">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis explicabo perspiciatis necessitatibus vero accusantium soluta similique? Ipsum, qui quae fugit laborum suscipit sed iure incidunt dolor, non enim, sapiente
+                                accusamus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="combo">
+
+                        <div class="descrip-combo bg-primary">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis explicabo perspiciatis necessitatibus vero accusantium soluta similique? Ipsum, qui quae fugit laborum suscipit sed iure incidunt dolor, non enim, sapiente
+                                accusamus!
+                            </p>
+                        </div>
+                        <a href=""><img src="imagenes/bakery.jpg"> </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="combo">
+                        <a href=""><img src="imagenes/pets.jpg"></a>
+                        <div class="descrip-combo bg-primary">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis explicabo perspiciatis necessitatibus vero accusantium soluta similique? Ipsum, qui quae fugit laborum suscipit sed iure incidunt dolor, non enim, sapiente
+                                accusamus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="main-footer" class="bg-dark text-center py-1">
+        <div class="container">
+            <h2 class="m-heading text-center">
+                <span class="text-primary">
+                     </span>Follow us on our social networks</h2>
+            <div class="items py-1">
+                <div class="item"> <img src="imagenes/icons8_facebook_old_50px_1.png" alt="">
+                    <img src="imagenes/icons8_instagram_50px_1.png" alt="">
+                    <img src="imagenes/icons8_twitter_50px.png" alt=""></div>
+                <p>Copyright &copy; 2019, Café 97, All Rights Reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+
+    <!--Local JS File-->
+    <script src="js/main.js"></script>
+
+    <!-- Google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZg2Es_GrQHZf_52j2-xZ3cTfBCR0HII&callback=initMap" async defer></script>
+</body>
