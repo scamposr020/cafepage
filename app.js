@@ -1,43 +1,32 @@
-const express = require('express');
-const Gethomepage = require('./routes/index');
-const bodyParser = require('body-parser');
-const path = require('path');
-
+const express = require('express'),
+    path = require('path'),
+    // morgan = require('morgan'),
+    mysql = require('mysql'),
+    myConnection = require('express-myconnection');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
 
+const pruebaRoutes = require('./routes/ruta');
 
-var sql = require("mssql/msnodesqlv8");
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-var dbConfig = {
-    database: "practix",
-    server: "localhost",
-    driver: "msnodesqlv8",
-    options: {
-        trustedConnection: true
-    }
-}
+//app.use(morgan('dev'));
+let conrec = app.use(myConnection(mysql, {
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'practixa'
+}, 'single'));
 
-var conn = new sql.ConnectionPool(dbConfig);
+app.use(express.urlencoded({ extended: false }));
+app.use('/', pruebaRoutes);
 
-conn.connect(function(err) {
-    if (err) {
-        console.log("wrong");
-    } else {
-        console.log("Se ha conectado a la base de datos");
-    }
+// static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// starting the server
+app.listen(app.get('port'), () => {
+    console.log(`server on port ${app.get('port')}`);
 });
-
-global.dbConfig = dbConfig;
-global.sql = sql;
-app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views');
-
-Gethomepage(app);
-
-const webserver = app.listen(5000, function() {
-    console.log('Running on port 5000');
-})
