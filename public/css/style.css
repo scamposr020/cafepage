@@ -237,6 +237,9 @@ p {
     margin-top: 4rem;
 }
 
+/*Section Reserve image*/
+
+
 
 /*Menu*/
 
@@ -278,6 +281,17 @@ p {
 #contact .contact-form textarea {
     width: 100%;
     padding: 0.5rem;
+}
+
+#contact .contact-form select,
+#contact .contact-form  textarea{
+    width:1200px;
+    margin: 0.75rem;
+    padding: 0.5rem;
+    display:block;
+    size:20px;
+    text-emphasis: center;
+    flex: 1;
 }
 
 .h3-1 {
