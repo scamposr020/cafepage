@@ -26,10 +26,10 @@
         </h1>
         <ul>
             <!--li{<a href="#"></a>}*4-->
-            <li><a href="#home">Home</a></li>
-            <li><a href="#what">What</a></li>
-            <li><a href="#who">Who</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">H o m e</a></li>
+            <li><a href="#what">W h a t</a></li>
+            <li><a href="#who">W h o</a></li>
+            <li><a href="#contact">C o n t a c t</a></li>
         </ul>
     </nav>
     <!--HEADER-->
@@ -39,11 +39,8 @@
         <div class="showcase-content">
             <div class="description">
                 <h1 class="l-heading">
-                    A Place Of Comfort
+                    <span class="text-primary">Work</span> anywhere
                 </h1>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima placeat quod, aut ex fugiat quam.</p>
-                <a href="#what" class="btn">Read More
-                </a>
             </div>
             <div class="firstPic"></div>
             <div class="secondPic"></div>
@@ -74,9 +71,9 @@
             <h2 class="m-heading text-center"> <span class="text-primary">What</span> You Can Enjoy</h2>
             <div class="items">
 
-                <div class="item">
+                <div class="item item1">
                     <div class="combo">
-                        <a href=""><img src="public/imagenes/wifi.jpg"></a>
+                        <a href=""><img src="public/imagenes/wifi.jpg" class="img1"></a>
 
                         <div class="descrip-combo bg-primary">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis explicabo perspiciatis necessitatibus vero accusantium soluta similique? Ipsum, qui quae fugit laborum suscipit sed iure incidunt dolor, non enim, sapiente
@@ -85,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item item2">
                     <div class="combo">
 
                         <div class="descrip-combo bg-primary">
@@ -96,7 +93,7 @@
                         <a href=""><img src="public/imagenes/bakery.jpg"> </a>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item item3">
                     <div class="combo">
                         <a href=""><img src="public/imagenes/pets.jpg"></a>
                         <div class="descrip-combo bg-primary">
@@ -108,6 +105,55 @@
                 </div>
             </div>
     </section>
+    <!--Section: Reserve -->
+    <section id="contact">
+        <div class="contact-form bg-primary p-2">
+            <h2 class="m-heading">Reserve</h2>
+            <p>Please enter the following information to reserve</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="Firtsurname">Firts Surname</label>
+                    <input type="text" name="Firtsurname" id="Firtsurname" placeholder="Enter Firt Surname">
+                </div>
+                <div class="form-group">
+                    <label for="Secondsurname">Second Surname</label>
+                    <input type="text" name="Secondsurname" id="Secondsurname" placeholder="Enter Second Surname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter Phone Number">
+                </div>
+                <div class="select">
+                    <label for="information">Information</label>
+                    <select name="combo" id="combo" placeholder="Enter Combo">
+
+            <option value="1">Combo1 $5000</option>
+            
+            <option value="2">Combo2 $12000</option>
+            
+            <option value="3">Combo3 $2000</option>
+            
+            </select>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Date</label>
+                    <input type="date" name="fecha" id="fecha" min="2020-01-01" max="2020-12-31">
+                </div>
+                <input type="submit" value="Send" class="btn btn-dark">
+            </form>
+        </div>
+
+
+    </section>
+
 
     <!--Footer-->
     <footer id="main-footer" class="bg-dark text-center py-1">
@@ -130,7 +176,8 @@
 
     <!--Local JS File-->
     <script src="js/main.js"></script>
-
+    <script src="js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.js"></script>
     <!-- Google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZg2Es_GrQHZf_52j2-xZ3cTfBCR0HII&callback=initMap" async defer></script>
 </body>

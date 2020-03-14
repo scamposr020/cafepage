@@ -146,7 +146,6 @@ p {
     width: 100%;
     justify-content: space-between;
     position: fixed;
-    /*SE PONE ESTO PARA QUE SE QUEDE "STICKY" EN LA PARTE DE ARRIBA*/
     background: #000;
     color: #f4f4f4;
     z-index: 2;
@@ -200,7 +199,7 @@ p {
 
 #what .items {
     display: flex;
-    padding: 1rem;
+    align-content: center;
 }
 
 #what .items .item {
@@ -237,8 +236,8 @@ p {
     margin-top: 4rem;
 }
 
-/*Section Reserve image*/
 
+/*Section Reserve image*/
 
 
 /*Menu*/
@@ -284,12 +283,12 @@ p {
 }
 
 #contact .contact-form select,
-#contact .contact-form  textarea{
-    width:1200px;
+#contact .contact-form textarea {
+    width: 1200px;
     margin: 0.75rem;
     padding: 0.5rem;
-    display:block;
-    size:20px;
+    display: block;
+    size: 20px;
     text-emphasis: center;
     flex: 1;
 }
@@ -342,9 +341,13 @@ p {
 
 .description-comment {
     position: absolute;
-    width: 100%;
     text-align: justify;
     padding: 2rem;
+    display: block;
+}
+
+.descrip-combo {
+    display: block;
 }
 
 .autor {
