@@ -263,9 +263,8 @@ p {
     display: flex;
 }
 
-#contact .map,
-#contact .contact-form {
-    flex: 1;
+.contact-form {
+    width: 50%;
 }
 
 #contact .contact-form .form-group {
@@ -276,21 +275,15 @@ p {
     display: block;
 }
 
-#contact .contact-form input,
-#contact .contact-form textarea {
+#contact .contact-form input {
     width: 100%;
     padding: 0.5rem;
 }
 
-#contact .contact-form select,
-#contact .contact-form textarea {
-    width: 1200px;
-    margin: 0.75rem;
+#contact select {
+    width: 90%;
     padding: 0.5rem;
     display: block;
-    size: 20px;
-    text-emphasis: center;
-    flex: 1;
 }
 
 .h3-1 {

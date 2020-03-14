@@ -1,3 +1,8 @@
+.bg-primary-core {
+    background: #fddc9a;
+    color: #333;
+}
+
 .text-primary {
     color: #f2a304;
 }
@@ -15,6 +20,10 @@
     width: 100%;
     bottom: 0%;
     position: absolute;
+}
+
+#who .who-img {
+    background: url('../imagenes/logo-exm.png') no-repeat;
 }
 
 .btn {
@@ -71,9 +80,31 @@
 }
 
 .descrip-combo {
-    width: 50%;
-    height: 25%;
     text-align: justify;
     padding: 2rem;
     border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+#what .elements .element {
+    text-align: center;
+    padding: 1rem;
+}
+
+#what .element img {
+    border-radius: 5px;
+    display: block;
+    /*Se utiliza display block para poder poner un width y mas
+                    que todo poder CENTRARLOS con margin*/
+    width: 30%;
+}
+
+.combo {
+    display: flex;
+}
+
+.reserve-rightbox {
+    background-color: #333;
+    width: 50%;
 }
