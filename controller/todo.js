@@ -6,7 +6,7 @@ controller.list = (req, res) => {
             if (err) {
                 console.log(err);
             }
-            res.render('JoinOurTeam', {
+            res.render('index', {
                 persona: result
             });
         });
@@ -23,15 +23,24 @@ controller.save = (req, res) => {
             CorreoPerso: req.body.CorreoPerso,
             TelefonoPerso: req.body.TelefonoPerso
         };
-        console.log(persona);
+        var reserva = {
+            Combo: req.body.Combo,
+            Fecha: req.body.Fecha
+        }
 
         const query = connection.query('INSERT INTO tb_persona set ?', persona, (err, resp) => {
             if (err) {
-
-            } else {
-                res.redirect('/');
+                console.log(err);
             }
         });
+
+        const query2 = connection.query('INSERT INTO tb_reserva set ?', reserva, (err, resp) => {
+            if (err) {
+                console.log(err);
+            }
+
+        });
+        res.redirect('/');
     });
 };
 
