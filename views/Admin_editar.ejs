@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-4HfFay3AYJnEmbgRzxYWJk/Ka5jIimhB/Fssk7NGT9Tj3rkEChpSxLK0btOGzf2I" crossorigin="anonymous">
+    <title>Administrador Página</title>
+</head>
+<h2>Editar</h2>
+
+<body>
+    <div class=" m-5 ">
+        <div class="row">
+            <div class="col-md-3 ml-5">
+                <div class="card-body">
+                    <form action="/saveeditarReserva/<%= verReserva.Id_Res %>" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="NombrePerso" class="form-control" value=" <%= verReserva.NombrePerso%>" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ApellidoPerso" class="form-control" value="<%= verReserva.ApellidoPerso%>" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="SegundoApellidoPerso" class="form-control" value=" <%= verReserva.SegundoApellidoPerso%>" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="TelefonoPerso" class="form-control" value=" <%= verReserva.TelefonoPerso%>" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="CorreoPerso" class="form-control" value="<%= verReserva.CorreoPerso%>" autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="information">Escoja el combo</label>
+                            <select name="Combo" id="Combo" placeholder="Choose Combo" class="form-control">
+                                    <option value="1">Combo1</option>
+                        
+                                    <option value="2">Combo2</option>
+                                    
+                                    <option value="3">Combo3</option>
+                                   ></select>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="badge badge-primary">Agregue la fecha</span>
+                            <input type="date" class="form-control" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
+                        </div>
+                        <button type="submit" class="btn-primary"> Guardar </button>
+                    </form>
+                </div>
+            </div>
+</body>
+
+</html>

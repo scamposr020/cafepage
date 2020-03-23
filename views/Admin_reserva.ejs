@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-4HfFay3AYJnEmbgRzxYWJk/Ka5jIimhB/Fssk7NGT9Tj3rkEChpSxLK0btOGzf2I" crossorigin="anonymous">
+    <title>Administrador Página</title>
+</head>
+<h2>RESERVA</h2>
+
+<body id="home">
+
+    <div class=" m-5 ">
+
+        <div class="">
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Primer Apellido</td>
+                                <td>Segundo Apellido</td>
+                                <td>Telefono</td>
+                                <td>Correo</td>
+                                <td>Combo</td>
+                                <td>Fecha</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% for(var i = 0; i < verReserva.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= verReserva[i].NombrePerso%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].ApellidoPerso%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].SegundoApellidoPerso%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].TelefonoPerso%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].CorreoPerso%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].Combo%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].Fecha%>
+                                    </td>
+
+                                    <td>
+                                        <a href="/loadEditarReserva/<%= verReserva[i].Id_Res %>" class="btn btn-info">Editar</a>
+                                        <a href="/elimiReserva/<%= verReserva[i].Id_Res %>" class="btn btn-danger">Eliminar</a>
+                                    </td>
+
+                                    <% } %>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-3 ml-5">
+                    <div class="card-body">
+
+                        <form action="/agregarReserva" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="NombrePerso" placeholder="Nombre" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="ApellidoPerso" placeholder="Primer Apellido" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="SegundoApellidoPerso" placeholder="Segundo Apellido" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="TelefonoPerso" placeholder="Teléfono" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="CorreoPerso" placeholder="Correo electrónico" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="information">Escoja el combo</label>
+                                <select name="Combo" id="Combo" placeholder="Choose Combo" class="form-control">
+                                    <option value="1">Combo1</option>
+                        
+                                    <option value="2">Combo2</option>
+                                    
+                                    <option value="3">Combo3</option>
+                                   ></select>
+                            </div>
+
+                            <div class="form-group">
+                                <span class="badge badge-primary">Agregue la fecha</span>
+                                <input type="date" class="form-control" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
+                            </div>
+                            <button type="submit" class="btn-primary"> Guardar </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
