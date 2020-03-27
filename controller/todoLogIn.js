@@ -16,7 +16,7 @@ controllerLog.logged = (req, res) => {
                 res.redirect('/Login');
             }
             if (resultado != "") {
-                res.redirect('/Admin_reserva');
+                res.redirect('/reserva');
             }
         });
     });
