@@ -2,14 +2,14 @@ const controllerAdmin = {}
 
 controllerAdmin.listReserva = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('Select Id_Res, NombrePerso, ApellidoPerso,SegundoApellidoPerso, TelefonoPerso, CorreoPerso, Combo, Fecha FROM tb_Persona INNER JOIN tb_Reserva ON tb_Persona.idPerso = tb_Reserva.idPerso', (err, result) => {
+        conn.query('Select tb_persona.IdPerso, Id_Res, NombrePerso, ApellidoPerso,SegundoApellidoPerso, TelefonoPerso, CorreoPerso, Sala, Fecha, Hora, HoraEntrega FROM tb_Persona INNER JOIN tb_Reserva ON tb_Persona.idPerso = tb_Reserva.idPerso', (err, result) => {
             if (err) {
                 console.log(err);
             }
             res.render('Admin_reserva', {
+
                 verReserva: result
             });
-
         });
     });
 }
@@ -27,14 +27,17 @@ controllerAdmin.saveReserva = (req, res) => {
         }
 
 
-        let Combo = req.body.Combo;
+        let Sala = req.body.Sala;
         let Fecha = req.body.Fecha;
+        let Hora = req.body.Hora;
+        let HoraEntrega = req.body.HoraEntrega;
+
 
         const query = conn.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
             if (err) {
                 console.log(err);
             }
-            const query2 = conn.query("INSERT INTO `tb_reserva` (Combo, Fecha, IdPerso) VALUES ('" + Combo + "', '" + Fecha + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
+            const query2 = conn.query("INSERT INTO `tb_reserva` (Sala, Fecha, Hora, HoraEntrega, IdPerso) VALUES ('" + Sala + "', '" + Fecha + "', '" + Hora + "', '" + HoraEntrega + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
                 if (err) {
                     console.log(err);
                 }
@@ -42,23 +45,22 @@ controllerAdmin.saveReserva = (req, res) => {
             res.redirect('/reserva');
         });
 
-
     });
 }
 
 
 controllerAdmin.delReserva = (req, res) => {
-    const { Id_Res } = req.params;
+    const { IdPerso } = req.params;
     req.getConnection((err, conn) => {
-        conn.query('DELETE FROM tb_reserva WHERE IdPerso = ?', [Id_Res], (err, resp) => {
+        conn.query('DELETE FROM tb_reserva WHERE IdPerso = ?', [IdPerso], (err, resp) => {
             if (err) {
                 console.log(err);
             }
-            conn.query('DELETE FROM tb_testimonios WHERE IdPerso = ?', [Id_Res], (err, resp) => {
+            conn.query('DELETE FROM tb_testimonios WHERE IdPerso = ?', [IdPerso], (err, resp) => {
                 if (err) {
                     console.log(err);
                 }
-                conn.query('DELETE FROM tb_persona WHERE IdPerso = ?', [Id_Res], (err, resp) => {
+                conn.query('DELETE FROM tb_persona WHERE IdPerso = ?', [IdPerso], (err, resp) => {
                     if (err) {
                         console.log(err);
                     }
@@ -72,19 +74,49 @@ controllerAdmin.delReserva = (req, res) => {
 
 
 controllerAdmin.loadEditReserva = (req, res) => {
-    const { Id_Res } = req.params;
+    const { IdPerso } = req.params;
     req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM tb_reserva WHERE IdPerso = ?', [Id_Res], (err, result) => {
+        conn.query('Select tb_persona.IdPerso, Id_Res, NombrePerso, ApellidoPerso,SegundoApellidoPerso, TelefonoPerso, CorreoPerso, Sala, Fecha, Hora, HoraEntrega FROM tb_Persona INNER JOIN tb_Reserva ON tb_Persona.idPerso = tb_Reserva.idPerso WHERE tb_Reserva.idPerso = ?', [IdPerso], (err, result) => {
             if (err) {
                 console.log(err);
             }
             res.render('Admin_editar', {
                 verReserva: result[0]
             });
-
         });
     });
 }
 
+controllerAdmin.editReserva = (req, res) => {
 
+    const { IdPerso } = req.params;
+    const clienteInfo = {
+        NombrePerso: req.body.NombrePerso,
+        ApellidoPerso: req.body.ApellidoPerso,
+        SegundoApellidoPerso: req.body.SegundoApellidoPerso,
+        TelefonoPerso: req.body.TelefonoPerso,
+        CorreoPerso: req.body.CorreoPerso
+    }
+    const reservaInfo = {
+        Sala: req.body.Sala,
+        Fecha: req.body.Fecha,
+        Hora: req.body.Hora,
+        HoraEntrega: req.body.HoraEntrega
+    }
+
+    req.getConnection((err, conn) => {
+        conn.query('UPDATE tb_persona SET ? WHERE IdPerso = ?', [clienteInfo, IdPerso], (err, res) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        conn.query('UPDATE tb_reserva SET ? WHERE IdPerso = ?', [reservaInfo, IdPerso], (err, res) => {
+            if (err) {
+                console.log(err);
+            }
+
+        });
+    });
+
+}
 module.exports = controllerAdmin;

@@ -24,8 +24,10 @@
                                 <td>Segundo Apellido</td>
                                 <td>Telefono</td>
                                 <td>Correo</td>
-                                <td>Combo</td>
+                                <td>Sala</td>
                                 <td>Fecha</td>
+                                <td>Hora de reserva</td>
+                                <td>Hora de Entrega de reserva</td>
                                 <td></td>
                             </tr>
                         </thead>
@@ -49,15 +51,21 @@
                                         <%= verReserva[i].CorreoPerso%>
                                     </td>
                                     <td>
-                                        <%= verReserva[i].Combo%>
+                                        <%= verReserva[i].Sala%>
                                     </td>
                                     <td>
                                         <%= verReserva[i].Fecha%>
                                     </td>
+                                    <td>
+                                        <%= verReserva[i].Hora%>
+                                    </td>
+                                    <td>
+                                        <%= verReserva[i].HoraEntrega%>
+                                    </td>
 
                                     <td>
-                                        <a href="/loadEditarReserva/<%= verReserva[i].Id_Res %>" class="btn btn-info">Editar</a>
-                                        <a href="/elimiReserva/<%= verReserva[i].Id_Res %>" class="btn btn-danger">Eliminar</a>
+                                        <a href="/loadEditarReserva/<%= verReserva[i].IdPerso %>" class="btn btn-info">Editar</a>
+                                        <a href="/elimiReserva/<%= verReserva[i].IdPerso %>" class="btn btn-danger">Eliminar</a>
                                     </td>
 
                                     <% } %>
@@ -85,19 +93,28 @@
                                 <input type="text" name="CorreoPerso" placeholder="Correo electrónico" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="information">Escoja el combo</label>
-                                <select name="Combo" id="Combo" placeholder="Choose Combo" class="form-control">
-                                    <option value="1">Combo1</option>
+                                <label for="information">Sala a escoger</label>
+                                <select name="Sala" id="Sala" placeholder="Sala a escoger" class="form-control">
+                                    <option value="1">Sala 1</option>
                         
-                                    <option value="2">Combo2</option>
+                                    <option value="2">Sala 2</option>
                                     
-                                    <option value="3">Combo3</option>
-                                   ></select>
+                                    <option value="3">Sala 3</option>
+                                   </select>
                             </div>
 
                             <div class="form-group">
                                 <span class="badge badge-primary">Agregue la fecha</span>
                                 <input type="date" class="form-control" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="hora">Hora de reserva (formato de 24 hrs) </label>
+                                <input type="time" name="Hora" id="Hora">
+                            </div>
+                            <div class="form-group">
+                                <label for="information">Horas de entrega de sala (formato de 24 hrs)</label>
+                                <input type="time" name="Hora" id="HoraEntrega">
                             </div>
                             <button type="submit" class="btn-primary"> Guardar </button>
                         </form>

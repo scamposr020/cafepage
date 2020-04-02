@@ -13,9 +13,8 @@ router.get('/login', todoLog.listLog);
 router.post('/logged', todoLog.logged);
 router.get('/reserva', todoAdmin.listReserva)
 router.post('/agregarReserva', todoAdmin.saveReserva)
-router.get('/elimiReserva/:Id_Res', todoAdmin.delReserva)
-router.get('/loadEditarReserva/:Id_Res', todoAdmin.loadEditReserva)
-    /*router.post('/saveeditarReserva/:Id_Res', todoAdmin.editReserva)
+router.get('/elimiReserva/:IdPerso', todoAdmin.delReserva)
+router.get('/loadEditarReserva/:IdPerso', todoAdmin.loadEditReserva)
+router.post('/saveeditarReserva/:IdPerso', todoAdmin.editReserva)
 
-    */
 module.exports = router;

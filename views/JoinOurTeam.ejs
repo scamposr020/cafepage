@@ -17,14 +17,12 @@
 <body id="home">
     <!--Navbar-->
     <nav id="navbar">
-        <!--Se pone el navbar afuera del header para que funcione como sticky-->
-        <!--Si se pone adentro entonces cuando llegue al final de la pagina va a desaparecer-->
+
         <h1 class="logo">
             <span class="text-primary">
             <i class="fas fa-mug-hot"></i> Core</span> 97
         </h1>
         <ul>
-            <!--li{<a href="#"></a>}*4-->
             <li><a href="#home">H o m e</a></li>
             <li><a href="#what">W h a t</a></li>
             <li><a href="#who">W h o</a></li>
@@ -99,53 +97,64 @@
     </section>
     <!--Section: Reserve -->
     <section id="contact">
+        <div class="error">
+            <%= messages.error%>
+        </div>
         <div class="contact-form bg-primary-core p-2">
             <h2 class="m-heading">Reserve</h2>
             <p>Please enter the following information to reserve</p>
             <form action="/add" method="POST">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="NombrePerso" id="NombrePerso" placeholder="Enter Name">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="NombrePerso" id="NombrePerso">
                 </div>
                 <div class="form-group">
-                    <label for="First Surname">First Surname</label>
-                    <input type="text" name="ApellidoPerso" id="ApellidoPerso" placeholder="Enter First Surname">
+                    <label for="First Surname">Apellido</label>
+                    <input type="text" name="ApellidoPerso" id="ApellidoPerso">
                 </div>
                 <div class="form-group">
-                    <label for="Secondsurname">Second Surname</label>
-                    <input type="text" name="SegundoApellidoPerso" id="SegundoApellidoPerso" placeholder="Enter Second Surname">
+                    <label for="Secondsurname">Segundo Apellido</label>
+                    <input type="text" name="SegundoApellidoPerso" id="SegundoApellidoPerso">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="CorreoPerso" id="CorreoPerso" placeholder="Enter Email">
+                    <label for="email">Correo</label>
+                    <input type="email" name="CorreoPerso" id="CorreoPerso">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" name="TelefonoPerso" id="TelefonoPerso" placeholder="Enter Phone Number">
+                    <label for="phone">Número telefónico</label>
+                    <input type="text" name="TelefonoPerso" id="TelefonoPerso">
                 </div>
                 <div class="form-group">
-                    <label for="information">Information</label>
-                    <select name="Combo" id="Combo" placeholder="Choose Combo">
-                        <option value="1">Combo1</option>
+                    <label for="information">Sala a escoger</label>
+                    <select name="Sala" id="Sala">
+                        <option value="1">Sala 1</option>
             
-                        <option value="2">Combo2</option>
+                        <option value="2">Sala 2</option>
                         
-                        <option value="3">Combo3</option>
+                        <option value="3">Sala 3</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
+                </div>
+                <div class="form-group">
+
+                    <label for="hora">Hora de reserva (formato de 24 hrs) </label>
+                    <input type="time" name="Hora" id="Hora">
+                </div>
+                <div class="form-group">
+                    <label for="information">Horas de entrega de sala (formato de 24 hrs)</label>
+                    <input type="time" name="Hora" id="HoraEntrega">
+                </div>
+                <input value="Send" type="button" class="btn-dark bton">
 
         </div>
-        <div class="form-group">
-            <label for="fecha">Date</label>
-            <input type="date" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
-        </div>
-        <input type="submit" value="Send" class="btn-dark">
         </form>
 
-        </div>
-
         <section class="reserve-rightbox">
-            <div class="reserve-container bg-dark">hola</div>
+
+            <div class="reserve-container bg-dark">aqui va logo</div>
         </section>
 
     </section>
@@ -167,14 +176,8 @@
 
     </footer>
 
-    <!--JQuery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
     <!--Local JS File-->
-    <script src="/main.js"></script>
-    <script src="/animation.js"></script>
-    <script src="/validation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.js"></script>
-    <!-- Google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZg2Es_GrQHZf_52j2-xZ3cTfBCR0HII&callback=initMap" async defer></script>
+    <script src="/errorhandling.js"></script>
+    <script src="/error.js"></script>
 </body>

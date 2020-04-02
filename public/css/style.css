@@ -118,6 +118,11 @@ p {
     background: #fa9170;
 }
 
+.error {
+    background-color: #ffdbdb;
+    position: absolute;
+}
+
 .btn-dark {
     background: #333;
     color: #fff;
