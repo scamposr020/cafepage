@@ -31,20 +31,30 @@ controllerAdmin.saveReserva = (req, res) => {
         let Fecha = req.body.Fecha;
         let Hora = req.body.Hora;
         let HoraEntrega = req.body.HoraEntrega;
-
-
-        const query = conn.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
+        const query = conn.query("SELECT * FROM tb_reserva WHERE Hora = '" + Hora + "' AND HoraEntrega = '" + HoraEntrega + "'" + "AND Fecha = '" + Fecha + "'", (err, respu) => {
             if (err) {
                 console.log(err);
             }
-            const query2 = conn.query("INSERT INTO `tb_reserva` (Sala, Fecha, Hora, HoraEntrega, IdPerso) VALUES ('" + Sala + "', '" + Fecha + "', '" + Hora + "', '" + HoraEntrega + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
-                if (err) {
-                    console.log(err);
-                }
-            });
+            var resultado = respu.toString();
+            console.log(resultado);
+            if (resultado == "") {
+                const query = conn.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    const query2 = conn.query("INSERT INTO `tb_reserva` (Sala, Fecha, Hora, HoraEntrega, IdPerso) VALUES ('" + Sala + "', '" + Fecha + "', '" + Hora + "', '" + HoraEntrega + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                });
+            }
+            if (resultado != "") {
+                req.flash('error',
+                    'Ya existe esa reserva')
+            }
             res.redirect('/reserva');
         });
-
     });
 }
 
@@ -116,6 +126,7 @@ controllerAdmin.editReserva = (req, res) => {
             }
 
         });
+        res.redirect('/reserva');
     });
 
 }

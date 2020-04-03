@@ -17,19 +17,27 @@ btn.addEventListener("click", () => {
         alert('Por favor llene todo el formulario')
         btn.setAttribute("type", "button")
 
-    }
-    if (TelefonoPerso.value.length > 8 || TelefonoPerso.value.length < 8 ||
-        Number.isInteger(parseInt(TelefonoPerso.value)) == false) {
-        alert('Por favor agregue un numero de telefono valido')
-        btn.setAttribute("type", "button")
-    }
-    if (Number.isInteger(parseInt(NombrePerso.value)) == true ||
-        Number.isInteger(parseInt(ApellidoPerso.value)) == true ||
-        Number.isInteger(parseInt(SegundoApellidoPerso.value)) == true) {
-        alert('Por favor solo ingrese letras')
-        btn.setAttribute("type", "button")
     } else {
-        btn.setAttribute("type", "submit")
+        if (TelefonoPerso.value.length > 8 || TelefonoPerso.value.length < 8 ||
+            Number.isInteger(parseInt(TelefonoPerso.value)) == false) {
+            alert('Por favor agregue un numero de telefono valido')
+            btn.setAttribute("type", "button")
+        } else {
+            if (Number.isInteger(parseInt(NombrePerso.value)) == true ||
+                Number.isInteger(parseInt(ApellidoPerso.value)) == true ||
+                Number.isInteger(parseInt(SegundoApellidoPerso.value)) == true) {
+                alert('Por favor solo ingrese letras')
+                btn.setAttribute("type", "button")
+            } else {
+                if (!(CorreoPerso.value.includes("@")) || !(CorreoPerso.value.includes(".com"))) {
+                    alert('Por favor ingrese un correo valido')
+                    btn.setAttribute("type", "button")
+                } else {
+                    btn.setAttribute("type", "submit")
+                }
+            }
+        }
     }
 
-})
+
+});

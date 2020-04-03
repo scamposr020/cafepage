@@ -27,11 +27,11 @@ controller.save = (req, res) => {
         let Fecha = req.body.Fecha;
         let Hora = req.body.Hora;
         let HoraEntrega = req.body.HoraEntrega;
-        const query = connection.query("SELECT * FROM tb_reserva WHERE Hora = '" + Hora + "' AND HoraEntrega = '" + HoraEntrega + "'" + "AND Fecha = '" + Fecha + "'", (err, resp) => {
+        const query = connection.query("SELECT * FROM tb_reserva WHERE Hora = '" + Hora + "' AND HoraEntrega = '" + HoraEntrega + "'" + "AND Fecha = '" + Fecha + "'", (err, respu) => {
             if (err) {
                 console.log(err);
             }
-            var resultado = resp.toString();
+            var resultado = respu.toString();
             console.log(resultado);
             if (resultado == "") {
                 const query = connection.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
@@ -45,11 +45,11 @@ controller.save = (req, res) => {
                         console.log(err);
                     }
                 });
-                console.log(setPersona);
-                res.redirect('/Core97');
+
             }
             if (resultado != "") {
-                req.flash('error', 'Ya existe esa reserva')
+                req.flash('error',
+                    'Ya existe esa reserva')
             }
             res.redirect('/Core97#contact');
         })
