@@ -2,11 +2,12 @@ const error = document.querySelector(".error")
 
 document.addEventListener('DOMContentLoaded', function() {
     if (error.innerHTML.match('No existe ese administrador')) {
-        error.style.padding = "22px 596px 20px 600px";
-        error.style.color = "#b33636";
+        error.style.padding = "20px 550px 20px 550px";
+        error.style.position = "relative";
+        error.style.color = "#F1A303";
         error.style.borderRadius = "15px";
-        error.style.backgroundColor = "#ffdbdb";
-        error.style.border = "1px solid #b33636";
+        error.style.backgroundColor = "#ffe1a3";
+        error.style.border = "1px solid #F1A303";
 
 
     } else {
