@@ -6,7 +6,7 @@ controller.list = (req, res) => {
             if (err) {
                 console.log(err);
             }
-            res.render('index', {
+            res.render('Cafe97', {
                 persona: result
             });
         });
@@ -32,24 +32,34 @@ controller.save = (req, res) => {
                 console.log(err);
             }
             var resultado = respu.toString();
-            console.log(resultado);
-            if (resultado == "") {
-                const query = connection.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
 
-                const query2 = connection.query("INSERT INTO `tb_reserva` (Sala, Fecha, Hora, HoraEntrega, IdPerso) VALUES ('" + Sala + "', '" + Fecha + "', '" + Hora + "', '" + HoraEntrega + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
+            var moment = require('moment');
+            var startTime = moment(Hora, 'HH:mm:ss');
+            var endTime = moment(HoraEntrega, 'HH:mm:ss');
+            var duracionentreHoras = endTime.diff(startTime, 'hours')
+            var TotalDebe = duracionentreHoras * 8000 + "";
 
-            }
-            if (resultado != "") {
-                req.flash('error',
-                    'Ya existe esa reserva')
+            if (duracionentreHoras != 0) {
+                if (resultado == "") {
+                    const query = connection.query('INSERT INTO tb_persona set ?', setPersona, (err, resp) => {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
+                    const query2 = connection.query("INSERT INTO `tb_reserva` (Sala, Fecha, Hora, HoraEntrega, TotalDebe, IdPerso) VALUES ('" + Sala + "', '" + Fecha + "', '" + Hora + "', '" + HoraEntrega + "', '" + TotalDebe + "',(SELECT IdPerso FROM tb_persona ORDER BY IdPerso DESC LIMIT 1 ))", (err, resp) => {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
+                }
+                if (resultado != "") {
+                    req.flash('error',
+                        'Ya existe esa reserva')
+                }
+            } else {
+                req.flash('errorHora', 'La reservacion minimo debe ser igual o mayor a una hora');
             }
             res.redirect('/Core97#contact');
         })

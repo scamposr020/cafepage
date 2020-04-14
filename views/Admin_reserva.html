@@ -9,9 +9,7 @@
     <title>Administrador Página</title>
 </head>
 <h2>RESERVA</h2>
-<div class="error">
-    <%= messages.error%>
-</div>
+
 
 <body id="home">
 
@@ -37,43 +35,46 @@
                         </thead>
                         <tbody>
 
-                            <% for(var i = 0; i < verReserva.length; i++) { %>
-                                <tr>
-                                    <td>
-                                        <%= verReserva[i].NombrePerso%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].ApellidoPerso%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].SegundoApellidoPerso%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].TelefonoPerso%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].CorreoPerso%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].Sala%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].Fecha%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].Hora%>
-                                    </td>
-                                    <td>
-                                        <%= verReserva[i].HoraEntrega%>
-                                    </td>
 
-                                    <td>
-                                        <a href="/loadEditarReserva/<%= verReserva[i].IdPerso %>" class="btn btn-info">Editar</a>
-                                        <a href="/elimiReserva/<%= verReserva[i].IdPerso %>" class="btn btn-danger">Eliminar</a>
-                                    </td>
+                            <tr>
+                                <td>
+                                    Nombre
+                                </td>
+                                <td>
+                                    ApellidoPerso
+                                </td>
+                                <td>
+                                    SegundoApellidoPerso
+                                </td>
+                                <td>
+                                    25656523
+                                </td>
+                                <td>
+                                    CorreoPerso@.com
+                                </td>
+                                <td>
+                                    Sala
+                                </td>
+                                <td>
+                                    Fecha
+                                </td>
+                                <td>
+                                    Hora
+                                </td>
+                                <td>
+                                    HoraEntrega
+                                </td>
+                                <td>
+                                    TotalDebe
+                                </td>
 
-                                    <% } %>
-                                </tr>
+                                <td>
+                                    <a href="/loadEditarReserva/<%= verReserva[i].IdPerso %>" class="btn btn-info">Editar</a>
+                                    <a href="/elimiReserva/<%= verReserva[i].IdPerso %>" class="btn btn-danger">Eliminar</a>
+                                </td>
+
+
+                            </tr>
                         </tbody>
                     </table>
                 </div>

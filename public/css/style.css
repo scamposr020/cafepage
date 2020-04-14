@@ -118,7 +118,8 @@ p {
     background: #fa9170;
 }
 
-.error {
+.error,
+.errorHora {
     background-color: #ffdbdb;
     position: absolute;
 }
