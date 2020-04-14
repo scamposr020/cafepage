@@ -2,7 +2,6 @@ const error = document.querySelector(".error")
 const errorHora = document.querySelector(".errorHora")
 document.addEventListener('DOMContentLoaded', function() {
     if (error.innerHTML.match('Ya existe esa reserva')) {
-        console.log("entra");
         error.style.padding = "22px 596px 20px 600px";
         error.style.color = "#b33636";
         error.style.borderRadius = "15px";

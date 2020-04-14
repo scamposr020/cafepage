@@ -13,10 +13,11 @@ controllerLog.logged = (req, res) => {
         conn.query('SELECT * FROM tb_LogIn Where nombreUsuario = "' + nombreUsuario + '"and passUsuario = "' + passUsuario + '"', (err, result) => {
             var resultado = result.toString();
             if (resultado == "") {
+                req.flash('error', 'No existe ese administrador');
                 res.redirect('/Login');
             }
             if (resultado != "") {
-                res.redirect('/reserva');
+                res.redirect('/loadMenuAdmin');
             }
         });
     });

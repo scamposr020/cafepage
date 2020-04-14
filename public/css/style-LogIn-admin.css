@@ -1,0 +1,91 @@
+.form-wrap {
+    display: block;
+    margin-top: 100px ;
+   text-align: center;
+   margin-left: 30em;
+}
+.form-wrap p{
+    font-size: large;
+    word-spacing: 5px;
+}
+
+
+.form-wrap .form-group .olvide a:hover,a:visited,a:focus{
+  text-decoration: none;
+ color:#F1A303;
+}
+
+.form-wrap .form-group input{
+   margin-top: 50px;
+    width: 20em;
+    height: 3em;
+    border-color: rgb(194, 189, 179);
+  text-align: center;
+  border-width: 2px;
+  border-radius: 5px;
+    
+}
+.logo{
+ position: absolute;
+  margin-top: 5em;
+  margin-left: 5em;
+
+}
+
+ .linea{
+    border-left: 1px solid rgb(145, 140, 140);
+    height: 330px;
+     position: absolute;
+     margin-left: 37em;
+    margin-top: 5em;
+  }
+  .form-wrap .olvide button{
+    background-color: #fff;
+     margin-top: 15px;
+     font-size: x-small;
+     border: none;
+     cursor: pointer;
+     color: #F1A303;
+ }
+ 
+input[type=text]:focus {
+    transition-duration: 2s;
+    border: 2px solid  #F1A303;
+  }
+  input[type=password]:focus {
+    transition-duration: 2s;
+    border: 2px solid  #F1A303;
+  }
+  
+  ::placeholder {
+    color: rgb(61, 56, 56);
+    
+  }
+ 
+.form-wrap .form-group .entra button{
+   
+    margin-top: 52px;
+    margin-left: 25em;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #F1A303;
+    width: 16em;
+    height: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    display: block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+.form-wrap .form-group .entra button:hover {
+    background:  #434343;;
+    color: #fff;
+    letter-spacing: 3px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
+
