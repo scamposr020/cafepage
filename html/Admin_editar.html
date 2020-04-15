@@ -18,25 +18,25 @@
                 <div class="card-body ">
                     <form action="/saveeditarReserva/<%=verReserva.IdPerso%>" method="POST">
                         <div class="form-group">
-                            <input type="text" name="NombrePerso" id="NombrePerso" class="form-control" value="<%= verReserva.NombrePerso%>" autofocus>
+                            <input type="text" name="NombrePerso" id="NombrePerso" class="form-control" value="" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="ApellidoPerso" id="ApellidoPerso" class="form-control" value="<%=verReserva.ApellidoPerso%>" autofocus>
+                            <input type="text" name="ApellidoPerso" id="ApellidoPerso" class="form-control" value="" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="SegundoApellidoPerso" id="SegundoApellidoPerso" class="form-control" value="<%= verReserva.SegundoApellidoPerso%>" autofocus>
+                            <input type="text" name="SegundoApellidoPerso" id="SegundoApellidoPerso" class="form-control" value="" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="TelefonoPerso" id="TelefonoPerso" class="form-control" value="<%=verReserva.TelefonoPerso%>" autofocus>
+                            <input type="text" name="TelefonoPerso" id="TelefonoPerso" class="form-control" value="" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="mail" name="CorreoPerso" id="CorreoPerso" class="form-control" value="<%=verReserva.CorreoPerso%>" autofocus>
+                            <input type="mail" name="CorreoPerso" id="CorreoPerso" class="form-control" value="" autofocus>
                         </div>
 
                         <div class="form-group">
                             <label for="information">Sala a escoger</label>
                             <select name="Sala" id="Sala" class="form-control">
-                                <option selected hidden><%=verReserva.Sala%></option>   
+                                <option selected hidden></option>   
                                
                                 <option value="1">1</option>
                         
@@ -48,23 +48,23 @@
 
                         <div class="form-group">
                             <span class="badge badge-primary">Agregue la fecha</span>
-                            <input type="date" class="form-control" name="Fecha" id="Fecha" value="<%=verReserva.Fecha%>" min="2020-01-01" max="2020-12-31">
+                            <input type="date" class="form-control" name="Fecha" id="Fecha" value="<" min="2020-01-01" max="2020-12-31">
                         </div>
                         <div class="form-group">
 
                             <label for="hora">Hora de reserva (formato de 24 hrs) </label>
-                            <input type="time" name="Hora" id="Hora" value="<%=verReserva.Hora%>">
+                            <input type="time" name="Hora" id="Hora" value="">
                         </div>
                         <div class="form-group">
                             <label for="information">Horas de entrega de sala (formato de 24 hrs)</label>
-                            <input type="time" name="HoraEntrega" id="HoraEntrega" value="<%=verReserva.HoraEntrega%>">
+                            <input type="time" name="HoraEntrega" id="HoraEntrega" value="">
                         </div>
                         <button type="submit" class="btn-primary bton"> Guardar </button>
                     </form>
                 </div>
             </div>
 
-            <script src="/errorhandling.js"></script>
+
 </body>
 
 </html>

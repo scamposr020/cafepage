@@ -11,6 +11,7 @@ controllerAdmin.listReserva = (req, res) => {
 
                 verReserva: result
             });
+            console.log(result.ApellidoPerso);
         });
     });
 }

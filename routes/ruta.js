@@ -6,7 +6,10 @@ const todoAdmin = require('../controller/todoReserva');
 const todoLog = require('../controller/todoLogIn');
 const todoCambioContra = require('../controller/todoCambioContra');
 const todoMenu = require('../controller/todoMenu');
+const todoHome = require('../controller/todoHomepage');
 
+
+router.get('/', todoHome.list);
 router.get('/Cafe97', todo.list);
 router.get('/Core97', todoIndex.listIndex);
 router.post('/add', todo.save);
