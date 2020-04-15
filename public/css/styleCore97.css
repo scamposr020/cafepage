@@ -23,7 +23,7 @@
 }
 
 #who .who-img {
-    background: url('../imagenes/logo-exm.png') no-repeat;
+    background: #f4f4f4 url('../imagenes/logo.jpg') no-repeat;
 }
 
 .btn {
@@ -105,6 +105,6 @@
 }
 
 .reserve-rightbox {
-    background-color: #333;
+    background: #f4f4f4 url(../imagenes/logo.jpg) no-repeat;
     width: 50%;
 }
