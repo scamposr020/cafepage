@@ -7,6 +7,7 @@ const todoLog = require('../controller/todoLogIn');
 const todoCambioContra = require('../controller/todoCambioContra');
 const todoMenu = require('../controller/todoMenu');
 const todoHome = require('../controller/todoHomepage');
+const reservaPdf = require('../controller/ReservaPdf');
 
 
 router.get('/', todoHome.list);
@@ -23,5 +24,7 @@ router.get('/loadEditarReserva/:IdPerso', todoAdmin.loadEditReserva)
 router.post('/saveeditarReserva/:IdPerso', todoAdmin.editReserva)
 router.get('/loadCambioContra', todoCambioContra.listCambioContra)
 router.post('/editCambioContra', todoCambioContra.editCambioContra)
+router.get('/loadPdf', reservaPdf.PDFgenerated)
+
 
 module.exports = router;
