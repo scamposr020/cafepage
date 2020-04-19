@@ -1,0 +1,57 @@
+#form-group{
+    margin-top: 80px;
+    
+}
+label{
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    margin-bottom: 11px;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+    
+}
+input{
+
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+button{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 80px;
+    background-color:rgb(243, 202, 88);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255); /* Green */
+    transition-duration: 0.4s;
+    width: 150px ;
+    height: 40px;
+}
+button:hover{
+
+    background-color: rgb(255, 255, 255);
+  color: rgb(243, 202, 88);
+}
+#wrapper {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: rgb(243, 202, 88);
+    padding: 50px;
+    margin-top: 7em;
+    margin-left: 29em;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    padding: 1px;
+    padding-bottom: 20px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  #ingresa{
+
+    font-size: medium;
+  }
