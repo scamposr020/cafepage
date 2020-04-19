@@ -1,62 +1,43 @@
 const controller = {}
 
+
+
 controller.PDFgenerated = (req, res) => {
     req.getConnection((err, conn) => {
+        const pdfDoc = require('pdfkit');
+        const pdfTable = require('voilab-pdf-table');
+        const fs = require('fs');
+        const docCreado = new pdfDoc();
+        var carga;
+        docCreado.pipe(carga = fs.createWriteStream('./controller/documento.pdf'), { encoding: 'utf16' });
         conn.query('Select tb_persona.IdPerso, Id_Res, NombrePerso, ApellidoPerso,SegundoApellidoPerso, TelefonoPerso, CorreoPerso, Sala, Fecha, Hora, HoraEntrega, TotalDebe FROM tb_Persona INNER JOIN tb_Reserva ON tb_Persona.idPerso = tb_Reserva.idPerso', (err, result) => {
 
             if (err) {
                 console.log(err);
             }
+            let element = '';
 
+            for (let index = 0; index < result.length; index++) {
+                element = "Nombre: " + result[index].NombrePerso + "\n" + "Primer apellido:" + result[index].ApellidoPerso +
+                    "\n" + "Segundo apellido:" + result[index].SegundoApellidoPerso +
+                    "\n" + "Telefono:" + result[index].TelefonoPerso +
+                    "\n" + "Correo electronico:" + result[index].CorreoPerso +
+                    "\n" + "Sala reservada:" + result[index].Sala +
+                    "\n" + "Fecha:" + result[index].Fecha +
+                    "\n" + "Hora de entrega:" + result[index].HoraEntrega +
+                    "\n" + "Total debe cliente:" + result[index].TotalDebe + "\n \n" + element;
+            }
+
+            docCreado.text(element);
+
+
+            docCreado.end();
+
+            carga.on('finish', async function() {
+                res.sendFile(__dirname + '/documento.pdf');
+            });
         });
     })
-
-    var pdf = require("pdf-creator-node");
-    var fs = require('fs');
-
-    // Read HTML Template
-    var html = fs.readFileSync('Menu-Admin.ejs', 'utf8');
-
-    var options = {
-        format: "A3",
-        orientation: "portrait",
-        border: "10mm",
-        header: {
-            height: "45mm",
-            contents: '<div style="text-align: center;">Author: Shyam Hajare</div>'
-        },
-        "footer": {
-            "height": "28mm",
-            "contents": {
-                first: 'Cover page',
-                2: 'Second page', // Any page number is working. 1-based index
-                default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
-                last: 'Last Page'
-            }
-        }
-
-    };
-    var users = [{
-            name: "Shyam",
-            age: "26"
-        },
-        {
-            name: "Navjot",
-            age: "26"
-        },
-        {
-            name: "Vitthal",
-            age: "26"
-        }
-    ]
-    var document = {
-        html: html,
-        data: {
-            users: users
-        },
-        path: "./output.pdf"
-    };
-
 
 }
 module.exports = controller;
