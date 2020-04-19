@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="../public/css/style-cambioConta-admin.css">
+ 
     <title>Document</title>
 </head>
 
@@ -20,12 +22,13 @@
             <div class="alerta">
 
             </div>
-            <labe>Ingrese el usuario al cual va a cambiarle la contraseña</label>
-                <label id="usuario"> usuario</label>
-                <input type="text" name="nombreUsuario" id="usuario">
-                <label id="password"> contraseña</label>
-                <input type="text" name="passUsuario" id="password">
-                <button type="submit">Actualizar</button>
+            <div id="wrapper">
+            <label id = "ingresa">Ingrese el usuario al cual va a cambiar la contraseña</label>
+                <label id="usuario">USUARIO</label>
+                <input type="text" name="nombreUsuario" id="usuario" class="form-control" style="width: 250px;">
+                <label id="password"> CONTRASEÑA</label>
+                <input type="text" name="passUsuario" id="password" class="form-control" style="width: 250px;">
+                <button type="submit">CAMBIAR</button> </div>
         </form>
     </section>
 
