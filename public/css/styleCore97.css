@@ -1,29 +1,67 @@
 .bg-primary-core {
-    background: #fddc9a;
+    
+    background:  #f8b93a;
     color: #333;
+    -webkit-box-shadow: 0 20px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px 0 rgba(0,0,0,0.3);
 }
-
+ h1{
+     letter-spacing: 10px;
+     text-align: center;
+ }
 .text-primary {
-    color: #f2a304;
+    color: #ffaa00;
+}
+.text-primary
+{
+    text-shadow: 0.5px 1px 2px #5a5858;
 }
 
 #showcase {
     height: 100vh;
-    color: #f4f4f4;
+  
     position: relative;
     background: none;
 }
-
-.firstPic {
-    background: #333 url(../imagenes/brooke-cagle-WHWYBmtn3_0-unsplash.jpg) no-repeat center center/cover;
-    height: 100%;
-    width: 100%;
-    bottom: 0%;
+.backgHead {
     position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+	width: 100%;
+	height: 80%;
 }
 
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 90%;
+    margin-top: -1.2%;
+}
+
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
 #who .who-img {
-    background: #f4f4f4 url('../imagenes/logo.jpg') no-repeat;
+    background: #f4f4f4 url('../imagenes/coffeeandwork.jpg') no-repeat;
 }
 
 .btn {
@@ -37,10 +75,12 @@
     background: none;
     flex-direction: column;
     align-items: center;
+    
+
 }
 
 #navbar .logo {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     text-align: center;
 }
 
@@ -54,7 +94,7 @@
 
 #navbar ul li a:hover {
     background: #f3c059;
-    color: #333;
+   
 }
 
 .description {
@@ -67,12 +107,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    height: 102.5%;
+    
 }
+/*showcase-content y navbar*/
+
 
 #showcase .showcase-content {
-    padding-top: 23rem;
+    padding-top: 30.5rem;
 }
 
 .logo {
@@ -103,8 +145,40 @@
 .combo {
     display: flex;
 }
-
-.reserve-rightbox {
-    background: #f4f4f4 url(../imagenes/logo.jpg) no-repeat;
-    width: 50%;
+.contact-form {
+    
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 50px;
+    margin-top: 3em;
+    margin-left: 29em;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    padding: 1px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 40px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
 }
+.btn-dark {
+  display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(243, 202, 88);
+    border: 2px solid rgb(243, 202, 88); /* Green */
+    transition-duration: 0.4s;
+    width: 30   px ;
+    height: 45px;
+    font-size: medium;
+
+}.btn-dark:hover{
+
+    background-color: rgb(243, 202, 88);
+  color: rgb(255, 255, 255);
+}
+
+

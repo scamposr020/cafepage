@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+.col-md-3 .card-body
+{
+	background: rgb(243, 202, 88);
+	border-radius: 7px;
+	margin-left: -60px;
+	border-radius: 10px; box-shadow:20px 20px 2px rgba(0,0,0,0.1)
+}
+h2 {
+	color: rgb(243, 202, 88);
+ text-align: center;
+ margin-top: 50px;
+ margin-bottom: -20px;
+ margin-left: 490px;
+ font-size: 40px;
+ letter-spacing: 8px;
+
+}
+h2::after{
+	content:" "; width:380px; height:3px; background: rgb(182, 182, 182); display:block; margin-top:30px; border-radius:3px; margin-left:auto;margin-right:auto; box-shadow: 2px 2px 5px rgb(128, 128, 128);
+
+}
+
+body{
+	background: rgb(243, 240, 240);
+}
+
+
+.row{
+	margin-left: 32%;
+	width: 1900px;
+	margin-top: 70px;
+}
+
+
+.titulo
+{
+	padding-top: 6px;
+	padding-left: 15px;
+}
+
+
+.labl{
+	
+	font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	color: #5a5a5a;
+	font-weight: bold;
+}
+
+
+
+
+.btn
+{
+	border-radius: 5px;
+	border: solid rgba(232,232,232,1.00);
+	background: white;
+	color: rgb(243, 202, 88);
+	font-size: 20px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-left: 150px;
+	margin-top: 10px;
+	width: 150px;
+	height: 48px;
+} 
+.btn:hover {
+	background-color: rgb(243, 202, 88);
+	color: white;
+  }
+.form-group input{
+	border-radius:1rem;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+
+
+input[type=text]:focus {
+	border: 3px solid rgb(185, 185, 185);
+  }
+  input[type=mail]:focus {
+	border: 3px solid rgb(185, 185, 185);
+  }
+ .form-group label{
+   color: #5a5a5a;
+  
+  }
+
+
+
+
+
