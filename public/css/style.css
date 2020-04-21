@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+.form-wrap .form-group{
+    margin-top: 180px;
+   
+}
+
 :root {
     --principal: #fa9960;
     /*Es emjor usar SASS para  jjjj crear variables por la compatibilidad en exploradores*/
@@ -366,47 +371,58 @@ p {
 
 
 .widget {
-    margin: 2em;
-    
-    /*margin:32px; */
+ margin-top: -470px;
+margin-left: 500px;
+ 
 }
-
 .widget p {
-    display: inline-block;
-    line-height: small;
-    width: 30px;
+    display: inline;
+    width: 28px;
+    text-shadow:2px 2px 3px rgb(88, 88, 88);
+    
+   color: #ffffff;
+  
     
 }
-
-.wrap .fecha {
+.reloj .ampm{
+    margin-left: 45px;
+}
+.wrap .widget .fecha {
     font-family: Oswald, Arial;
     text-align: center;
-    font-size: small;
+    font-size:small;
     margin-bottom: 1rem;
-    /*margin-bottom: 5px;*/
-    background: #F1A303;
-    padding: 20px;
+    border-radius: 20px;
+    background:rgb(247, 202, 113);
     width: 20%;
-    height: 20%;
+    height: 25px;
+    margin-left: 2px;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.1);
+    margin-right: 70px;
+    
 }
 
-.reloj {
+.wrap .widget .reloj {
     font-family: Oswald, Arial;
-
-    padding: 20px;
+    width: 20%;
+    height: 25px;
+    border-radius: 20px;
     font-size:small;
     text-align: center;
-    background: #F1A303;
+    background: rgb(247, 202, 113);
+    margin-top: -42px;
+    margin-left: 25%;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.1)
 }
 
 .reloj .caja-segundos {
-    display: inline-block;
-     
-    
+    display: inline-block;  
+    font-size:small;
 }
 
 .reloj .segundos,
 .reloj .ampm {
+    margin-top: -31px;
     font-size:small;
     display: block;
   
@@ -433,7 +449,7 @@ p {
     width: 80%;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
-
+ 
 .Cafe97img {
     background: url(../imagenes/nathan-dumlao-71u2fOofI-U-unsplash.jpg) no-repeat center center/cover;
     clip-path: polygon(0 0, 0% 100%, 100% 100%);

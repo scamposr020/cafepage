@@ -4,6 +4,18 @@
    text-align: center;
 
 }
+.form-wrap p{
+  font-size:larger;
+  margin-bottom: -2.5em;
+ letter-spacing: 0.2em;
+
+}
+
+a:visited,a:hover, a:focus{
+
+  text-decoration: none;
+  color: white;
+}
 .form-wrap .form-group button:hover {opacity: 1.5}
 .form-wrap .form-group button{
    
@@ -22,8 +34,20 @@
     -webkit-animation: fadein 0.5s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
     transition: 2s;
+    text-decoration: none;
  
    
+}
+
+.form-wrap .form-group .animline {
+  margin-top: -40em;
+  margin-bottom: -40em;
+margin-left: 22em;
+fill: none;
+stroke:#F1A303;
+stroke-width: 2;
+-webkit-animation: expand-from-centre 5s linear forwards;
+animation: expand-from-centre 1.7s linear forwards;
 }
 @keyframes fadein {
     from {
@@ -59,16 +83,7 @@
 }
 
 
- .form-wrap .form-group .animline {
-      margin-top: -40em;
-      margin-bottom: -40em;
-    margin-left: 22em;
-    fill: none;
-    stroke:#F1A303;
-    stroke-width: 2;
-    -webkit-animation: expand-from-centre 5s linear forwards;
-    animation: expand-from-centre 1.7s linear forwards;
-  }
+
   @-webkit-keyframes expand-from-centre
 {
   from {
@@ -96,15 +111,3 @@
   }
 }
 
-.form-wrap p{
-    font-size:larger;
-    margin-bottom: -2.5em;
-   letter-spacing: 0.2em;
-  
-}
-
-a:visited,a:hover, a:focus{
-
-    text-decoration: none;
-    color: white;
-}
