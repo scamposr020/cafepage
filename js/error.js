@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     }
-    if (errorHora.innerHTML.match('La reservacion minimo debe ser igual o mayor a una hora')) {
+    if (errorHora.innerHTML.match('Cantidad de horas de reservación no admitidas')) {
         errorHora.style.padding = "22px 450px 20px 450px";
         errorHora.style.color = "#b33636";
         errorHora.style.borderRadius = "15px";
         errorHora.style.backgroundColor = "#ffdbdb";
         errorHora.style.border = "1px solid #b33636";
+        errorHora.style.marginTop = "25px";
+
     } else {
         error.style.padding = "0px 0px 0px 0px"
     }
