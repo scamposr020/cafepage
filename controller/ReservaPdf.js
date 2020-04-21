@@ -15,8 +15,7 @@ controller.PDFgenerated = (req, res) => {
             if (err) {
                 console.log(err);
             }
-            docCreado.text("INFORME DE RESERVAS Y CLIENTES");
-            docCreado.moveDown();
+           
             let element = '';
 
             for (let index = 0; index < result.length; index++) {
@@ -29,7 +28,8 @@ controller.PDFgenerated = (req, res) => {
                     "\n" + "Hora de entrega:" + result[index].HoraEntrega +
                     "\n" + "Total debe cliente:" + result[index].TotalDebe + "\n \n" + element;
             }
-
+            docCreado.text('INFORME DE RESERVAS Y CLIENTES');
+            
             docCreado.text(element);
 
 

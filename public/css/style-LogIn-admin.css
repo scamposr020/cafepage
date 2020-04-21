@@ -1,30 +1,34 @@
-.form-wrap {
+.form-wraps {
+    margin-top: 70px;
     display: block;
-    margin-top: 100px;
     text-align: center;
     margin-left: 30em;
 }
 
-.form-wrap p {
+.form-wraps p {
+    
     font-size: large;
     word-spacing: 5px;
+    margin-bottom: 20px;
 }
 
-.form-wrap .form-group .olvide a:hover,
+.form-wraps .form-groups .olvide a:hover,
 a:visited,
 a:focus {
     text-decoration: none;
     color: #F1A303;
 }
 
-.form-wrap .form-group input {
-    margin-top: 50px;
+.form-wraps .form-groups input {
+   
     width: 20em;
     height: 3em;
     border-color: rgb(194, 189, 179);
     text-align: center;
     border-width: 2px;
     border-radius: 5px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .logo {
@@ -41,7 +45,7 @@ a:focus {
     margin-top: 5em;
 }
 
-.form-wrap .olvide button {
+.form-wraps .olvide button {
     background-color: #fff;
     margin-top: 15px;
     font-size: x-small;
@@ -60,11 +64,9 @@ input[type=password]:focus {
     border: 2px solid #F1A303;
 }
 
- ::placeholder {
-    color: rgb(61, 56, 56);
-}
 
-.form-wrap .form-group .entra button {
+
+.form-wraps .form-groups .entra button {
     margin-top: 52px;
     margin-left: 25em;
     color: #fff !important;
@@ -80,7 +82,7 @@ input[type=password]:focus {
     transition: all 0.4s ease 0s;
 }
 
-.form-wrap .form-group .entra button:hover {
+.form-wraps .form-groups .entra button:hover {
     background: #434343;
     ;
     color: #fff;

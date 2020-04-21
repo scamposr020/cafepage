@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-4HfFay3AYJnEmbgRzxYWJk/Ka5jIimhB/Fssk7NGT9Tj3rkEChpSxLK0btOGzf2I" crossorigin="anonymous">
-
+   
     <title>Administrador Página</title>
 </head>
-<h2>RESERVA</h2>
+<h2 style="margin-top: 30px; text-align: center;margin-bottom: 50px;">RESERVA</h2>
 <div class="error">
     <%= messages.error%>
 </div>
@@ -22,7 +22,7 @@
 
         <div class="">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-left: 100px;">
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
@@ -85,7 +85,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-3 ml-5">
+                <div style="margin-left: 500px;">
                     <div class="card-body">
 
                         <form action="/agregarReserva" method="POST">
@@ -116,7 +116,7 @@
                             </div>
 
                             <div class="form-group">
-                                <span class="badge badge-primary">Agregue la fecha</span>
+                                <span class="badge badge-primary" style="background-color: #F1A303; color: white">Agregue la fecha</span>
                                 <input type="date" class="form-control" name="Fecha" id="Fecha" min="2020-01-01" max="2020-12-31">
                             </div>
                             <div class="form-group">
@@ -128,7 +128,7 @@
                                 <label for="information">Horas de entrega de sala (formato de 24 hrs)</label>
                                 <input type="time" name="HoraEntrega" id="HoraEntrega">
                             </div>
-                            <button type="submit" class="btn-primary bton"> Guardar </button>
+                            <button type="submit" class="btn-primary bton" style="background-color: #F1A303; color: white; border: #F1A303; height: 50px; width: 100px; border-radius: 25px;"> Guardar </button>
                         </form>
                     </div>
                 </div>
