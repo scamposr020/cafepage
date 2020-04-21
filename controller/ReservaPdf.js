@@ -15,6 +15,8 @@ controller.PDFgenerated = (req, res) => {
             if (err) {
                 console.log(err);
             }
+            docCreado.text("INFORME DE RESERVAS Y CLIENTES");
+            docCreado.moveDown();
             let element = '';
 
             for (let index = 0; index < result.length; index++) {

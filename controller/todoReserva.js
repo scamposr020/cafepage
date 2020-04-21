@@ -11,7 +11,6 @@ controllerAdmin.listReserva = (req, res) => {
 
                 verReserva: result
             });
-            console.log(result.ApellidoPerso);
         });
     });
 }
@@ -63,7 +62,7 @@ controllerAdmin.saveReserva = (req, res) => {
                     res.redirect('/reserva');
                 }
             } else {
-                req.flash('errorHora', 'La reservacion minimo debe ser igual o mayor a una hora');
+                req.flash('errorHora', 'Cantidad de horas de reservación no admitidas');
                 res.redirect('/reserva');
             }
         });
@@ -78,17 +77,12 @@ controllerAdmin.delReserva = (req, res) => {
             if (err) {
                 console.log(err);
             }
-            conn.query('DELETE FROM tb_testimonios WHERE IdPerso = ?', [IdPerso], (err, resp) => {
+            conn.query('DELETE FROM tb_persona WHERE IdPerso = ?', [IdPerso], (err, resp) => {
                 if (err) {
                     console.log(err);
                 }
-                conn.query('DELETE FROM tb_persona WHERE IdPerso = ?', [IdPerso], (err, resp) => {
-                    if (err) {
-                        console.log(err);
-                    }
 
-                    res.redirect('/reserva');
-                });
+                res.redirect('/reserva');
             });
         });
     });
@@ -135,8 +129,7 @@ controllerAdmin.editReserva = (req, res) => {
         HoraEntrega: req.body.HoraEntrega,
         TotalDebe: TotalDebe
     }
-    if (duracionentreHoras != 0) {
-
+    if (duracionentreHoras >= 1) {
 
         req.getConnection((err, conn) => {
             conn.query('UPDATE tb_persona SET ? WHERE IdPerso = ?', [clienteInfo, IdPerso], (err, res) => {
@@ -152,13 +145,13 @@ controllerAdmin.editReserva = (req, res) => {
             });
             res.redirect('/reserva');
         });
+
     } else {
         const { IdPerso } = req.params;
 
-        req.flash('errorHora', 'La reservacion minimo debe ser igual o mayor a una hora');
+        req.flash('errorHora', 'Cantidad de horas de reservación no admitidas');
         res.redirect('/loadEditarReserva/' + IdPerso + '');
 
     }
-
 }
 module.exports = controllerAdmin;
