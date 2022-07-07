@@ -22,7 +22,7 @@
     "express-flash": "0.0.2",
     "express-myconnection": "^1.0.4",
     "express-session": "^1.17.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "msnodesqlv8": "^0.8.10",
     "mssql": "^6.1.0",
     "mysql": "^2.18.1"
